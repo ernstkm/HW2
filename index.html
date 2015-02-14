@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head><title>Purdue IE</title>
+  <meta charset="UTF-8">
   <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
   <script src="jquery-1.11.2.js"></script>
   <script>
     $(document).ready(function(){
-
-      var student = $("tbody").load("https://hivelab.org/static/students.json");
-      console.log(student);
-
-
-      <!--https://hivelab.org/static/students.json-->
-
+        var students = [];
+        students = $.getJSON("https://hivelab.org/static/students.json");
+        console.log("hi");
+        var i=0;
+        for (i=0; i<students.length; i++) {
+          var trow;
+          trow="<tr><td>" + students[i].Name+"</td><td>" + students[i].GPA+"</td><td>" +students[i].GRE_V
+          + "</td><td>" +students[i].GRE_Q +"</td><td>" +students[i].Essay + "</td><td>" +students[i].Recom+ "</td></tr>";
+          $(trow ).append( $( "tbody" );
+        };
     });
   </script>
 </head>
