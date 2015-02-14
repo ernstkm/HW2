@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><title>Purdue IE</title>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+  <script src="jquery-1.11.2.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      var student = $("tbody").load("https://hivelab.org/static/students.json");
+      console.log(student);
+
+
+      <!--https://hivelab.org/static/students.json-->
+
+    });
+  </script>
+</head>
+<body>
+  <div class = "block"></div>
+  <h1>Graduate Applicants to Purdue IE</h1>
+  <p> Items </p>
+    <table class="applicantGrid">
+      <thead>
+        <tr id="tableTitle">
+          <th colspan="7">Graduate Applicants to Purdue IE</th>
+        </tr>
+          <tr>
+            <th>Name</th>
+            <th>GPA</th>
+            <th>GRE_V</th>
+            <th>GRE_Q</th>
+            <th>Essay</th>
+            <th>Recom</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+</body>
+</html>
