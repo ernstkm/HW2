@@ -1,9 +1,8 @@
 body{
   font-family:Arial;
 }
-
-.block{
-  width:100px;
-  height:100px;
-  background-color:blue;
+table{
+  border: solid 1px black;
+  font-size:12px;
+  text-align:center;
 }

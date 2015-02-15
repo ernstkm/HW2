@@ -4,25 +4,30 @@
   <meta charset="UTF-8">
   <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
   <script src="jquery-1.11.2.js"></script>
-  <script>
-    $(document).ready(function(){
-        var students = [];
-        students = $.getJSON("https://hivelab.org/static/students.json");
-        console.log("hi");
-        var i=0;
-        for (i=0; i<students.length; i++) {
-          var trow;
-          trow="<tr><td>" + students[i].Name+"</td><td>" + students[i].GPA+"</td><td>" +students[i].GRE_V
-          + "</td><td>" +students[i].GRE_Q +"</td><td>" +students[i].Essay + "</td><td>" +students[i].Recom+ "</td></tr>";
-          $(trow ).append( $( "tbody" );
-        };
+<script>
+  $(document).ready(function () {
+    $.getJSON("https://hivelab.org/static/students.json",
+      function (students) {
+        var tr=[];
+          for (var i = 0; i < students.length; i++) {
+            tr.push('<tr>');
+            tr.push("<td>" + students[i].Name + "</td>");
+            tr.push("<td>" + students[i].GPA + "</td>");
+            tr.push("<td>" + students[i].GRE_V + "</td>");
+            tr.push("<td>" + students[i].GRE_Q + "</td>");
+            tr.push("<td>" + students[i].Essay + "</td>");
+            tr.push("<td>" + students[i].Recom + "</td>");
+            tr.push('</tr>');
+          }
+          $('tbody').append($(tr.join('')));
+        });
     });
-  </script>
+</script>
 </head>
 <body>
-  <div class = "block"></div>
-  <h1>Graduate Applicants to Purdue IE</h1>
-  <p> Items </p>
+  <center>
+  <h2>Graduate Applicants to Purdue IE</h2>
+
     <table class="applicantGrid">
       <thead>
         <tr id="tableTitle">
@@ -40,5 +45,6 @@
         </thead>
         <tbody></tbody>
       </table>
+    </center>
 </body>
 </html>
