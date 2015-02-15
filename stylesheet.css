@@ -1,8 +1,11 @@
 body{
   font-family:Arial;
+  color:#332900;
+  background-color: #FFF0B2;
 }
-table{
-  border: solid 1px black;
+table, tr{
+  border: solid 1px white;
   font-size:12px;
   text-align:center;
+  border-collapse:collapse;
 }
